@@ -19,5 +19,10 @@ students = {
 def get_student(student_id):
     return jsonify(students.get(student_id, {"message": "Student not found"}))
 
+@app.route("/students", methods=["GET"])
+def get_all_students():
+    return jsonify(list(students.values()))
+
+
 if __name__ == "__main__":
-    app.run(port=5001)
+    app.run(port=5008)

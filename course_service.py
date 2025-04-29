@@ -18,5 +18,9 @@ courses = {
 def get_course(course_id):
     return jsonify(courses.get(course_id, {"message": "Course not found"}))
 
+@app.route("/courses", methods=["GET"])
+def get_all_students():
+    return jsonify(list(courses.values()))
+
 if __name__ == "__main__":
-    app.run(port=5002)
+    app.run(port=5005)
